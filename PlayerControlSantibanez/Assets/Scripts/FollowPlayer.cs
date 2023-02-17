@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -18,5 +19,6 @@ public class FollowPlayer : MonoBehaviour
     {
         //offset camera behind the player by adding to player's position
         transform.position = player.transform.position + offset;
+        
     }
 }

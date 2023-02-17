@@ -6,9 +6,12 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private float speed = 12.0f;
-    private float turnSpeed = 40.0f;
+    private float turnSpeed = 100.0f;
     private float horizontalInput;
     private float verticalInput;
+    public Camera mainCamera;
+    public Camera firstPerson;
+    public KeyCode switchKey;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +30,11 @@ public class PlayerControl : MonoBehaviour
         //this controlls the steering of the car
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
 
+        if (Input.GetKeyDown(switchKey))
+        {
+            firstPerson.enabled = !firstPerson.enabled;
+            mainCamera.enabled = !mainCamera.enabled;
+            
+        }
     }
 }
