@@ -11,7 +11,6 @@ public class PlayerControl : MonoBehaviour
     private float verticalInput;
     public Camera mainCamera;
     public Camera firstPerson;
-    public KeyCode switchKey;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +29,7 @@ public class PlayerControl : MonoBehaviour
         //this controlls the steering of the car
         transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
 
-        if (Input.GetKeyDown(switchKey))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             firstPerson.enabled = !firstPerson.enabled;
             mainCamera.enabled = !mainCamera.enabled;

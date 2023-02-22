@@ -11,8 +11,8 @@ public class PropellerRotatorX : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Rotate(Vector3.forward, 5);
+        transform.Rotate(Vector3.forward, 45);
     }
 }
